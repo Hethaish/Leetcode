@@ -1,0 +1,22 @@
+class Solution {
+public:
+     void inorderTraversal(TreeNode* currentnode,vector<int>&res) {
+        if(currentnode==nullptr){
+            return;
+        }
+        if(currentnode->left){
+            inorderTraversal(currentnode->left,res);
+            
+        }
+        res.push_back(currentnode->val);
+        if(currentnode->right)
+        {
+             inorderTraversal(currentnode->right,res);
+        }
+     }
+     vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        inorderTraversal(root, result);
+        return result;
+    }
+    };
